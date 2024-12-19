@@ -1,35 +1,128 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import heroImage from './assets/cartoon-headshot.jpg';
+import { FiMapPin } from 'react-icons/fi';
+import { FiGithub } from 'react-icons/fi';
+import { FiYoutube } from 'react-icons/fi';
+import { FaMediumM } from 'react-icons/fa';
+import { FiLinkedin } from 'react-icons/fi';
+import jsIcon from './assets/javascript.svg';
+import reactIcon from './assets/react.svg';
+import nodeIcon from './assets/nodejs.svg';
+import tailwindIcon from './assets/tailwind.svg';
+import postgresIcon from './assets/postgres.svg';
+import figmaIcon from './assets/figma.svg';
+import westpacIcon from './assets/westpac.svg';
+import unswIcon from './assets/unsw.svg';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div id="hero" className="flex flex-col gap-10 lg:flex-row">
+        <div id="details" className="flex-1">
+          <img
+            src={heroImage}
+            alt="Kush Singhy"
+            className="rounded-full w-32 h-32 mb-7"
+          />
+
+          <div className="flex flex-col gap-3 mb-6 lg:flex-row lg:items-center lg:gap-8">
+            <h1 className="text-5xl font-bold text-gray-800 min-w-72">
+              Kush Singhy
+            </h1>
+            <div
+              id="location"
+              className="flex gap-1 items-center text-gray-500 min-w-40"
+            >
+              <FiMapPin className="w-5 h-5" />
+              <p>Sydney, Australia</p>
+            </div>
+          </div>
+
+          <p className="text-xl font-medium text-gray-600 mb-7">
+            A software developer who likes to make pretty apps and run kinda far
+          </p>
+
+          <div id="socials" className="mb-6">
+            <p className="mb-3 text-gray-800">Find me here</p>
+            <div id="social-icons" className="flex gap-2">
+              <div className="w-9 h-9 border border-gray-600 rounded-full flex justify-center items-center">
+                <FiGithub className="w-5 h-5" />
+              </div>
+              <div className="w-9 h-9 border border-gray-600 rounded-full flex justify-center items-center">
+                <FiYoutube className="w-5 h-5" />
+              </div>
+              <div className="w-9 h-9 border border-gray-600 rounded-full flex justify-center items-center">
+                <FiLinkedin className="w-5 h-5" />
+              </div>
+              <div className="w-9 h-9 border border-gray-600 rounded-full flex justify-center items-center">
+                <FaMediumM className="w-5 h-5" />
+              </div>
+            </div>
+          </div>
+
+          <div id="tech-stack">
+            <p className="mb-3 text-gray-800">Current Technologies</p>
+            <div id="tech-icons" className="flex gap-2">
+              <img src={jsIcon} alt="Javascript" className="w-9 h-9" />
+              <img src={reactIcon} alt="React" className="w-9 h-9" />
+              <img src={nodeIcon} alt="NodeJS" className="w-9 h-9" />
+              <img src={tailwindIcon} alt="Tailwind" className="w-9 h-9" />
+              <img src={postgresIcon} alt="Postgres" className="w-9 h-9" />
+              <img src={figmaIcon} alt="Figma" className="w-9 h-9" />
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="experience"
+          className="flex-1 flex flex-col justify-center items-center gap-5"
+        >
+          <div className="flex flex-col gap-8">
+            <div>
+              <p className="text-gray-500 mb-1">Jul 2024 - Now</p>
+              <div className="w-full border border-gray-400 rounded-xl p-5">
+                <div className="flex gap-3 mb-3">
+                  <img src={westpacIcon} alt="Westpac" />
+                  <div className="flex flex-col">
+                    <p className="text-xl font-semibold">Westpac</p>
+                    <p className="text-base text-gray-500 font-normal">
+                      UI Developer
+                    </p>
+                  </div>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Vestibulum congue sapien et odio feugiat, vitae sollicitudin
+                  quam rhoncus.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <p className="text-gray-500 mb-1">Jan 2020 - May 2024</p>
+              <div className="w-full border border-gray-400 rounded-xl p-5">
+                <div className="flex gap-3 mb-3">
+                  <img src={unswIcon} alt="Westpac" />
+                  <div className="flex flex-col">
+                    <p className="text-xl font-semibold">UNSW</p>
+                    <p className="text-base text-gray-500 font-normal">
+                      B. Computer Science & B. Actuarial Stuides
+                    </p>
+                  </div>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Vestibulum congue sapien et odio feugiat, vitae sollicitudin
+                  quam rhoncus.
+                </p>
+              </div>
+            </div>
+          </div>
+          <button>Show all</button>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
