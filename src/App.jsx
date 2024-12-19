@@ -17,7 +17,7 @@ import unswIcon from './assets/unsw.svg';
 function App() {
   return (
     <>
-      <div id="hero" className="flex flex-col gap-10 lg:flex-row">
+      <div id="hero" className="flex flex-col gap-16 lg:flex-row">
         <div id="details" className="flex-1">
           <img
             src={heroImage}
@@ -25,7 +25,7 @@ function App() {
             className="rounded-full w-32 h-32 mb-7"
           />
 
-          <div className="flex flex-col gap-3 mb-6 lg:flex-row lg:items-center lg:gap-8">
+          <div className="flex flex-col gap-2 mb-5">
             <h1 className="text-5xl font-bold text-gray-800 min-w-72">
               Kush Singhy
             </h1>
@@ -73,48 +73,52 @@ function App() {
           </div>
         </div>
 
-        <div
-          id="experience"
-          className="flex-1 flex flex-col justify-center items-center gap-5"
-        >
-          <div className="flex flex-col gap-8">
-            <div>
-              <p className="text-gray-500 mb-1">Jul 2024 - Now</p>
-              <div className="w-full border border-gray-400 rounded-xl p-5">
-                <div className="flex gap-3 mb-3">
-                  <img src={westpacIcon} alt="Westpac" />
-                  <div className="flex flex-col">
-                    <p className="text-xl font-semibold">Westpac</p>
-                    <p className="text-base text-gray-500 font-normal">
-                      UI Developer
-                    </p>
+        <div id="experience" className="flex-1 flex flex-col gap-5 py-6">
+          <p className="text-2xl font-medium">Experience</p>
+          <div className="space-y-8 relative before:absolute before:mt-7 before:ml-3 before:h-full before:w-[3px] before:bg-gradient-to-tl before:from-transparent before:bg-slate-300 before:to-transparent">
+            <div className="flex gap-3">
+              <div className="w-7 min-w-7 h-7 max-h-7 rounded-full border-[3px] border-gray-300 bg-white z-10 mt-7"></div>
+              <div>
+                <p className="text-gray-500 mb-1">Jul 2024 - Now</p>
+                <div className="border border-gray-400 rounded-xl p-5">
+                  <div className="flex gap-3 mb-3">
+                    <img src={westpacIcon} alt="Westpac" />
+                    <div className="flex flex-col">
+                      <p className="text-xl font-semibold">Westpac</p>
+                      <p className="text-base text-gray-500 font-normal">
+                        UI Developer
+                      </p>
+                    </div>
                   </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Vestibulum congue sapien et odio feugiat, vitae sollicitudin
+                    quam rhoncus.
+                  </p>
                 </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Vestibulum congue sapien et odio feugiat, vitae sollicitudin
-                  quam rhoncus.
-                </p>
               </div>
             </div>
 
-            <div>
-              <p className="text-gray-500 mb-1">Jan 2020 - May 2024</p>
-              <div className="w-full border border-gray-400 rounded-xl p-5">
-                <div className="flex gap-3 mb-3">
-                  <img src={unswIcon} alt="Westpac" />
-                  <div className="flex flex-col">
-                    <p className="text-xl font-semibold">UNSW</p>
-                    <p className="text-base text-gray-500 font-normal">
-                      B. Computer Science & B. Actuarial Stuides
-                    </p>
+            <div className="flex gap-3">
+              <div className="w-7 min-w-7 h-7 max-h-7 rounded-full border-[3px] border-gray-300 bg-white z-10 mt-7"></div>
+              <div>
+                <p className="text-gray-500 mb-1">Jan 2020 - May 2024</p>
+                <div className="border border-gray-400 rounded-xl p-5">
+                  <div className="flex gap-3 mb-3">
+                    <img src={unswIcon} alt="UNSW" />
+                    <div className="flex flex-col">
+                      <p className="text-xl font-semibold">UNSW</p>
+                      <p className="text-base text-gray-500 font-normal">
+                        B. Computer Science & B. Actuarial Studies
+                      </p>
+                    </div>
                   </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Vestibulum congue sapien et odio feugiat, vitae sollicitudin
+                    quam rhoncus.
+                  </p>
                 </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Vestibulum congue sapien et odio feugiat, vitae sollicitudin
-                  quam rhoncus.
-                </p>
               </div>
             </div>
           </div>
