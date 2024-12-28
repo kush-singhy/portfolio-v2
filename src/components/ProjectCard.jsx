@@ -1,7 +1,20 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
+import { motion, useAnimationControls } from 'motion/react';
+
 export default function ProjectCard({ name, description, imgUrl }) {
+  const liftControls = useAnimationControls();
+
+  const imageVariants = {
+    lift: { y: -10 },
+    initial: { y: 0 },
+  };
+
   return (
-    <div className="flex flex-col gap-10 px-5 pt-5 border border-gray-500 rounded-2xl">
+    <motion.div
+      className="flex flex-col gap-10 px-5 pt-5 border border-gray-500 rounded-2xl cursor-pointer"
+      whileHover={() => liftControls.start('lift')}
+      onHoverEnd={() => liftControls.start('initial')}
+    >
       <div className="flex justify-between items-start">
         <div className="flex flex-col gap-1">
           <p className="text-xl font-medium">{name}</p>
@@ -17,12 +30,21 @@ export default function ProjectCard({ name, description, imgUrl }) {
         </div>
       </div>
       <div className="flex justify-center">
-        <img
+        <motion.img
           src={imgUrl}
           alt="Noteable"
           className="w-3/4 rounded-t-xl border-t border-x border-gray-500"
+          variants={imageVariants}
+          animate={liftControls}
+          transition={{ duration: 0.2, ease: 'easeInOut' }}
         />
       </div>
-    </div>
+    </motion.div>
   );
 }
+
+ProjectCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  imgUrl: PropTypes.string.isRequired,
+};

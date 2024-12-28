@@ -1,3 +1,5 @@
+import SocialIcon from '../components/SocialIcon';
+import TechIcon from '../components/TechIcon';
 import heroImage from '../assets/cartoon-headshot.jpg';
 import { FiDownloadCloud } from 'react-icons/fi';
 import { FiMapPin } from 'react-icons/fi';
@@ -50,30 +52,34 @@ export default function Details() {
       <div id="socials" className="mb-7">
         <p className="text-gray-800 mb-2">Find me here</p>
         <div id="social-icons" className="flex gap-2">
-          <div className="w-9 h-9 border border-gray-600 rounded-full flex justify-center items-center">
-            <FiGithub className="w-5 h-5" />
-          </div>
-          <div className="w-9 h-9 border border-gray-600 rounded-full flex justify-center items-center">
-            <FiYoutube className="w-5 h-5" />
-          </div>
-          <div className="w-9 h-9 border border-gray-600 rounded-full flex justify-center items-center">
-            <FiLinkedin className="w-5 h-5" />
-          </div>
-          <div className="w-9 h-9 border border-gray-600 rounded-full flex justify-center items-center">
-            <FaMediumM className="w-5 h-5" />
-          </div>
+          <SocialIcon
+            icon={<FiGithub className="w-5 h-5" />}
+            url="https://github.com/kush-singhy"
+          />
+          <SocialIcon
+            icon={<FiYoutube className="w-5 h-5" />}
+            url="https://www.youtube.com/@kushsinghy"
+          />
+          <SocialIcon
+            icon={<FiLinkedin className="w-5 h-5" />}
+            url="https://www.linkedin.com/in/kush-singhy/"
+          />
+          <SocialIcon
+            icon={<FaMediumM className="w-5 h-5" />}
+            url="https://medium.com/@kushsinghy02"
+          />
         </div>
       </div>
 
       <div id="tech-stack">
         <p className="text-gray-800 mb-2">Current Tech</p>
         <div id="tech-icons" className="flex gap-2">
-          <img src={jsIcon} alt="Javascript" className="w-9 h-9" />
-          <img src={reactIcon} alt="React" className="w-9 h-9" />
-          <img src={nodeIcon} alt="NodeJS" className="w-9 h-9" />
-          <img src={tailwindIcon} alt="Tailwind" className="w-9 h-9" />
-          <img src={postgresIcon} alt="Postgres" className="w-9 h-9" />
-          <img src={figmaIcon} alt="Figma" className="w-9 h-9" />
+          <TechIcon icon={jsIcon} name="Javascript" />
+          <TechIcon icon={reactIcon} name="React" />
+          <TechIcon icon={nodeIcon} name="NodeJS" />
+          <TechIcon icon={tailwindIcon} name="Tailwind" />
+          <TechIcon icon={postgresIcon} name="Postgres" />
+          <TechIcon icon={figmaIcon} name="Figma" />
         </div>
       </div>
     </section>
