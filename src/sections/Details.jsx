@@ -13,8 +13,13 @@ import nodeIcon from '../assets/nodejs.svg';
 import tailwindIcon from '../assets/tailwind.svg';
 import postgresIcon from '../assets/postgres.svg';
 import figmaIcon from '../assets/figma.svg';
+import cvFile from '../assets/cv.pdf';
 
 export default function Details() {
+  const handleCV = () => {
+    window.open(cvFile, '_blank');
+  };
+
   return (
     <section
       id="details"
@@ -30,7 +35,7 @@ export default function Details() {
         <h1 className="text-5xl font-bold text-gray-800 min-w-72 mb-2">
           Kush Singhy
         </h1>
-        <div className="flex gap-4 mb-3">
+        <div className="flex gap-3 mb-3">
           <div
             id="location"
             className="flex gap-2 items-center text-gray-500 min-w-40"
@@ -38,9 +43,14 @@ export default function Details() {
             <FiMapPin className="w-5 h-5" />
             <p>Sydney, Australia</p>
           </div>
-          <div className="flex gap-2 items-center text-gray-500 min-w-40">
-            <FiDownloadCloud />
-            <p>CV</p>
+          <div className="flex mr-auto text-gray-500 min-w-40">
+            <div
+              className="flex gap-2 items-center hover:scale-[1.02] hover:bg-gray-200 px-2 py-1 rounded-lg hover:text-gray-800 duration-200 cursor-pointer"
+              onClick={handleCV}
+            >
+              <FiDownloadCloud />
+              <p>CV</p>
+            </div>
           </div>
         </div>
       </div>

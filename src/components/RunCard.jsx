@@ -9,7 +9,7 @@ import {
 export default function RunCard({ run, isLast }) {
   return (
     <>
-      <div className="w-full flex justify-between px-4 py-3">
+      <div className="w-full flex justify-between px-5 py-4 hover:bg-gray-200 duration-200">
         <div className="w-2/5">
           <p className="font-medium truncate">{run.name}</p>
           <p className=" text-gray-500">{formatDate(run.start_date)}</p>

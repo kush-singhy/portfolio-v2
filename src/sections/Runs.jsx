@@ -22,7 +22,7 @@ export default function Runs() {
     fetchActivities();
   }, []);
 
-  if (loading)
+  if (loading) {
     return (
       <section id="runs" className="flex flex-col gap-4">
         <div className="relative">
@@ -35,6 +35,8 @@ export default function Runs() {
         <p className="text-gray-500">Loading...</p>
       </section>
     );
+  }
+
   if (error) return <div>Error loading activities: {error}</div>;
 
   // Find longest run
@@ -70,7 +72,7 @@ export default function Runs() {
         <p className="text-lg font-semibold mb-2">Longest Run</p>
 
         {longestRun && (
-          <div className="border border-gray-500 rounded-xl">
+          <div className="border-2 bg-[#F3F4F6] border-[#E7E8E9] rounded-xl">
             <RunCard run={longestRun} isLast={true} />
           </div>
         )}
@@ -79,7 +81,7 @@ export default function Runs() {
       <div>
         <p className="text-lg font-semibold mb-2">Fastest 5K</p>
         {fastest5kRun && (
-          <div className="border border-gray-500 rounded-xl">
+          <div className="border-2 bg-[#F3F4F6] border-[#E7E8E9] rounded-xl">
             <RunCard run={fastest5kRun} isLast={true} />
           </div>
         )}
@@ -88,7 +90,7 @@ export default function Runs() {
       <div>
         <p className="text-lg font-semibold mb-2">Recent Runs</p>
         <div className="flex flex-col gap-2">
-          <div className="border border-gray-500 rounded-xl">
+          <div className="border-2 bg-[#F3F4F6] border-[#E7E8E9] rounded-xl">
             {activities.slice(0, 5).map((activity, index) => (
               <RunCard
                 key={activity.id}
