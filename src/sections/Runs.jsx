@@ -22,7 +22,19 @@ export default function Runs() {
     fetchActivities();
   }, []);
 
-  if (loading) return <div>Loading activities...</div>;
+  if (loading)
+    return (
+      <section id="runs" className="flex flex-col gap-4">
+        <div className="relative">
+          <div className="flex items-center gap-5">
+            <p className="relative z-10 text-2xl font-bold">Runs</p>
+            <p className="text-gray-500 text-sm">(powered by Strava API)</p>
+          </div>
+          <span className="absolute bg-[#ABE2CB] w-[60px] h-[15px] bottom-0 -left-1 rotate-2" />
+        </div>
+        <p className="text-gray-500">Loading...</p>
+      </section>
+    );
   if (error) return <div>Error loading activities: {error}</div>;
 
   // Find longest run
@@ -32,24 +44,59 @@ export default function Runs() {
     null
   );
 
+  // Find fastest 5km run
+  const fastest5kRun = activities
+    .filter((activity) => {
+      // Convert meters to kilometers (5000m - 5500m range)
+      const distanceInKm = activity.distance / 1000;
+      return distanceInKm >= 5 && distanceInKm <= 5.5;
+    })
+    .reduce((fastest, activity) => {
+      if (!fastest) return activity;
+      return activity.moving_time < fastest.moving_time ? activity : fastest;
+    }, null);
+
   return (
     <section id="runs" className="flex flex-col gap-4">
       <div className="relative">
-        <p className="relative z-10 text-2xl font-bold">Runs</p>
+        <div className="flex items-center gap-5">
+          <p className="relative z-10 text-2xl font-bold">Runs</p>
+          <p className="text-gray-500 text-sm">(powered by Strava API)</p>
+        </div>
         <span className="absolute bg-[#ABE2CB] w-[60px] h-[15px] bottom-0 -left-1 rotate-2" />
       </div>
 
       <div>
         <p className="text-lg font-semibold mb-2">Longest Run</p>
-        {longestRun && <RunCard run={longestRun} />}
+
+        {longestRun && (
+          <div className="border border-gray-500 rounded-xl">
+            <RunCard run={longestRun} isLast={true} />
+          </div>
+        )}
+      </div>
+
+      <div>
+        <p className="text-lg font-semibold mb-2">Fastest 5K</p>
+        {fastest5kRun && (
+          <div className="border border-gray-500 rounded-xl">
+            <RunCard run={fastest5kRun} isLast={true} />
+          </div>
+        )}
       </div>
 
       <div>
         <p className="text-lg font-semibold mb-2">Recent Runs</p>
         <div className="flex flex-col gap-2">
-          {activities.slice(0, 5).map((activity) => (
-            <RunCard key={activity.id} run={activity} />
-          ))}
+          <div className="border border-gray-500 rounded-xl">
+            {activities.slice(0, 5).map((activity, index) => (
+              <RunCard
+                key={activity.id}
+                run={activity}
+                isLast={index === activities.slice(0, 5).length - 1}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

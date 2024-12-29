@@ -1,54 +1,36 @@
 import PropTypes from 'prop-types';
+import {
+  formatDistance,
+  formatPace,
+  formatTime,
+  formatDate,
+} from '../utils/formatUtils';
 
-export default function RunCard({ run }) {
-  const formatDistance = (meters) => {
-    return (meters / 1000).toFixed(2) + ' km';
-  };
-
-  const formatPace = (meters, seconds) => {
-    const paceInSeconds = seconds / (meters / 1000);
-    const minutes = Math.floor(paceInSeconds / 60);
-    const remainingSeconds = Math.floor(paceInSeconds % 60);
-    return `${minutes}'${remainingSeconds.toString().padStart(2, '0')}" / km`;
-  };
-
-  const formatTime = (seconds) => {
-    const minutes = Math.floor(seconds / 60);
-    const hours = Math.floor(minutes / 60);
-    const remainingMinutes = minutes % 60;
-    const remainingSeconds = seconds % 60;
-
-    if (hours > 0) {
-      return `${hours}:${remainingMinutes
-        .toString()
-        .padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
-    }
-    return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
-  };
-
+export default function RunCard({ run, isLast }) {
   return (
-    <div className="w-full flex justify-between border border-gray-500 rounded-xl px-4 py-3">
-      <div className="flex flex-col gap-1">
-        <p className="font-medium max-w-64 truncate">{run.name}</p>
-        <p className=" text-gray-500">
-          {new Date(run.start_date).toLocaleString()}
-        </p>
+    <>
+      <div className="w-full flex justify-between px-4 py-3">
+        <div className="w-2/5">
+          <p className="font-medium truncate">{run.name}</p>
+          <p className=" text-gray-500">{formatDate(run.start_date)}</p>
+        </div>
+        <div className="flex gap-9">
+          <div>
+            <p className=" text-gray-500">Distance</p>
+            <p>{formatDistance(run.distance)}</p>
+          </div>
+          <div>
+            <p className=" text-gray-500">Pace</p>
+            <p>{formatPace(run.distance, run.moving_time)}</p>
+          </div>
+          <div>
+            <p className=" text-gray-500">Time</p>
+            <p>{formatTime(run.moving_time)}</p>
+          </div>
+        </div>
       </div>
-      <div className="flex gap-9">
-        <div>
-          <p className=" text-gray-500">Distance</p>
-          <p>{formatDistance(run.distance)}</p>
-        </div>
-        <div>
-          <p className=" text-gray-500">Pace</p>
-          <p>{formatPace(run.distance, run.moving_time)}</p>
-        </div>
-        <div>
-          <p className=" text-gray-500">Time</p>
-          <p>{formatTime(run.moving_time)}</p>
-        </div>
-      </div>
-    </div>
+      {!isLast && <div className="w-[95%] mx-auto border-b border-gray-400" />}
+    </>
   );
 }
 
@@ -59,4 +41,5 @@ RunCard.propTypes = {
     distance: PropTypes.number.isRequired,
     moving_time: PropTypes.number.isRequired,
   }).isRequired,
+  isLast: PropTypes.bool,
 };

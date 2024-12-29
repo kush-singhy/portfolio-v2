@@ -10,7 +10,7 @@ function App() {
       <div className="flex flex-col gap-10 lg:flex-row">
         <Details />
 
-        <div className="flex flex-col gap-20 w-full p-6 lg:p-16 lg:h-full">
+        <div className="flex flex-col gap-28 w-full p-6 lg:p-16 lg:h-full">
           <Experience />
           <Projects />
           <Runs />
