@@ -32,7 +32,7 @@ export const formatDate = (dateString) => {
   return `${day} ${month} ${year}`;
 };
 
-export const formatTime = (dateString) => {
+export const formatDateTime = (dateString) => {
   const date = new Date(dateString);
   const hours = date.getHours();
   const minutes = date.getMinutes().toString().padStart(2, '0');
@@ -40,4 +40,18 @@ export const formatTime = (dateString) => {
   const formattedHours = hours % 12 || 12;
 
   return `${formattedHours}:${minutes}${ampm}`;
+};
+
+export const formatTime = (seconds) => {
+  const minutes = Math.floor(seconds / 60);
+  const hours = Math.floor(minutes / 60);
+  const remainingMinutes = minutes % 60;
+  const remainingSeconds = seconds % 60;
+
+  if (hours > 0) {
+    return `${hours}:${remainingMinutes
+      .toString()
+      .padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+  }
+  return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
 };

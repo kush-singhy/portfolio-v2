@@ -2,8 +2,9 @@ import PropTypes from 'prop-types';
 import {
   formatDistance,
   formatPace,
-  formatTime,
+  formatDateTime,
   formatDate,
+  formatTime,
 } from '../utils/formatUtils';
 
 export default function RunCard({ run, isLast }) {
@@ -18,7 +19,7 @@ export default function RunCard({ run, isLast }) {
             <span>{formatDate(run.start_date)}</span>
             <span className="hidden md:inline">
               {' '}
-              - {formatTime(run.start_date)}
+              - {formatDateTime(run.start_date)}
             </span>
           </p>
         </div>
