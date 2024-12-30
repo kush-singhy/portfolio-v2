@@ -55,8 +55,9 @@ export default function Details() {
         </div>
       </div>
 
-      <div className="text-xl font-medium text-gray-600 mb-7">
-        A software developer who likes to make pretty apps and run kinda far
+      <div className="text-xl font-light text-gray-600 mb-7">
+        A software developer who likes to make cool apps, run long distances and
+        read good books.
       </div>
 
       <div id="socials" className="mb-7">
