@@ -29,7 +29,7 @@ export default function Details() {
         <img
           src={heroImage}
           alt="Kush Singhy"
-          className="rounded-full w-24 h-24 md:w-32 md:h-32 mb-4 md:mb-7"
+          className="rounded-full w-20 h-20 md:w-32 md:h-32 mb-4 md:mb-7"
         />
 
         <div className="flex flex-col gap-2">
