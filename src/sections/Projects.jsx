@@ -20,7 +20,7 @@ export default function Projects() {
         />
         <ProjectCard
           name="Curiosity Curve"
-          description="A wordpress website built using the Elementor framework and custom CSS components."
+          description="A wordpress website built using Elementor and custom CSS components."
           imgUrl={curiosity_curve}
           siteUrl="https://curiositycurve.com.au/"
         />

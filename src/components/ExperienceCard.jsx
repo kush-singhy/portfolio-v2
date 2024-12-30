@@ -20,11 +20,11 @@ export default function ExperienceCard({
               className="duration-200 delay-100 group-hover:-rotate-12"
             />
             <div className="flex flex-col">
-              <p className="text-xl font-medium">{title}</p>
-              <p className="text-base ">{role}</p>
+              <p className="text-xl font-normal">{title}</p>
+              <p className="text-base text-gray-500">{role}</p>
             </div>
           </div>
-          <ul className="list-disc list-outside ml-6 text-gray-500 font-normal space-y-1">
+          <ul className="list-disc list-outside ml-6 text-gray-700 font-normal space-y-1">
             {Array.isArray(description) ? (
               description.map((bullet, index) => (
                 <li key={index}>
