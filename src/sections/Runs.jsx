@@ -62,7 +62,7 @@ export default function Runs() {
     <section id="runs" className="flex flex-col gap-4">
       <div className="relative">
         <div className="flex items-center gap-5">
-          <p className="relative z-10 text-3xl font-bold">Runs</p>
+          <p className="relative z-10 text-3xl font-semibold">Runs</p>
           <p className="text-gray-500 text-sm">(powered by Strava API)</p>
         </div>
         <span className="absolute bg-[#ABE2CB] w-[72px] h-[18px] bottom-0 -left-1 rotate-2" />
