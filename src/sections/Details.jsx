@@ -23,33 +23,35 @@ export default function Details() {
   return (
     <section
       id="details"
-      className="noscrollbar shrink-0 p-6 w-full mb-16 lg:sticky lg:top-0 lg:h-screen lg:w-[400px] lg:overflow-y-auto lg:p-16 lg:pr-0 lg:pb-24"
+      className="noscrollbar shrink-0 p-6 w-full lg:sticky lg:top-0 lg:h-screen lg:w-[400px] lg:overflow-y-auto lg:p-16 lg:pr-0 lg:pb-24"
     >
-      <img
-        src={heroImage}
-        alt="Kush Singhy"
-        className="rounded-full w-32 h-32 mb-7"
-      />
+      <div className="flex items-center gap-4 md:flex-col md:items-start md:gap-0">
+        <img
+          src={heroImage}
+          alt="Kush Singhy"
+          className="rounded-full w-24 h-24 md:w-32 md:h-32 mb-4 md:mb-7"
+        />
 
-      <div className="flex flex-col gap-2">
-        <h1 className="text-5xl font-bold text-gray-800 min-w-72 mb-2">
-          Kush Singhy
-        </h1>
-        <div className="flex gap-3 mb-3">
-          <div
-            id="location"
-            className="flex gap-2 items-center text-gray-500 min-w-40"
-          >
-            <FiMapPin className="w-5 h-5" />
-            <p>Sydney, Australia</p>
-          </div>
-          <div className="flex mr-auto text-gray-500 min-w-40">
+        <div className="flex flex-col gap-2">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 min-w-72 md:mb-2">
+            Kush Singhy
+          </h1>
+          <div className="flex md:gap-3 mb-3">
             <div
-              className="flex gap-2 items-center hover:scale-[1.02] hover:bg-gray-200 px-2 py-1 rounded-lg hover:text-gray-800 duration-200 cursor-pointer"
-              onClick={handleCV}
+              id="location"
+              className="flex gap-2 items-center text-gray-500 min-w-40"
             >
-              <FiDownloadCloud />
-              <p>CV</p>
+              <FiMapPin className="w-5 h-5" />
+              <p>Sydney, Australia</p>
+            </div>
+            <div className="flex mr-auto text-gray-500 min-w-40">
+              <div
+                className="flex gap-2 items-center hover:scale-[1.02] hover:bg-gray-200 px-2 py-1 rounded-lg hover:text-gray-800 duration-200 cursor-pointer"
+                onClick={handleCV}
+              >
+                <FiDownloadCloud />
+                <p>CV</p>
+              </div>
             </div>
           </div>
         </div>
@@ -82,7 +84,7 @@ export default function Details() {
         </div>
       </div>
 
-      <div id="tech-stack">
+      <div id="tech-stack" className="mb-16">
         <p className="text-gray-800 mb-2">Current Tech</p>
         <div id="tech-icons" className="flex gap-2">
           <TechIcon icon={jsIcon} name="Javascript" />

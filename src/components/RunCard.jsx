@@ -14,7 +14,7 @@ export default function RunCard({ run, isLast }) {
           <p className="font-medium truncate max-w-40 md:max-w-64">
             {run.name}
           </p>
-          <p className=" text-gray-500">
+          <p className=" ml-auto text-gray-500 md:ml-0">
             <span>{formatDate(run.start_date)}</span>
             <span className="hidden md:inline">
               {' '}
