@@ -6,7 +6,7 @@ export const formatPace = (meters, seconds) => {
   const paceInSeconds = seconds / (meters / 1000);
   const minutes = Math.floor(paceInSeconds / 60);
   const remainingSeconds = Math.floor(paceInSeconds % 60);
-  return `${minutes}'${remainingSeconds.toString().padStart(2, '0')}" / km`;
+  return `${minutes}'${remainingSeconds.toString().padStart(2, '0')}"`;
 };
 
 export const formatTime = (seconds) => {

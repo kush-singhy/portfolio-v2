@@ -15,11 +15,14 @@ export default function Projects() {
           name="Noteable"
           description="A full-stack web application"
           imgUrl={noteable}
+          siteUrl="https://usenoteable.com"
+          sourceCode="https://github.com/kush-singhy/noteable"
         />
         <ProjectCard
           name="Curiosity Curve"
           description="A wordpress website"
           imgUrl={curiosity_curve}
+          siteUrl="https://curiositycurve.com.au/"
         />
       </div>
     </section>
