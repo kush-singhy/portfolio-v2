@@ -57,7 +57,7 @@ export default function Details() {
         </div>
       </div>
 
-      <div className="text-xl font-light text-gray-600 mb-7">
+      <div className="text-lg md:text-xl font-light text-gray-600 mb-7">
         A software developer who likes to make cool apps, run long distances and
         read good books.
       </div>
