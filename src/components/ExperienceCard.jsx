@@ -17,7 +17,7 @@ export default function ExperienceCard({
             <img
               src={icon}
               alt={title}
-              className="drop-shadow-sm duration-200 delay-100 group-hover:-rotate-12"
+              className="duration-200 delay-100 group-hover:-rotate-12"
             />
             <div className="flex flex-col">
               <p className="text-xl font-medium">{title}</p>
