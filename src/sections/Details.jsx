@@ -33,7 +33,7 @@ export default function Details() {
         />
 
         <div className="flex flex-col gap-2">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 min-w-72 md:mb-2">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 md:min-w-72 md:mb-2">
             Kush Singhy
           </h1>
           <div className="flex md:gap-3 mb-3">
