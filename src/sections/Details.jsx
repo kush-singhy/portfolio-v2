@@ -23,7 +23,7 @@ export default function Details() {
   return (
     <section
       id="details"
-      className="noscrollbar shrink-0 p-6 lg:sticky lg:top-0 lg:h-screen lg:w-[400px] lg:overflow-y-auto lg:p-16 lg:pr-0 lg:pb-24"
+      className="noscrollbar shrink-0 p-6 w-full lg:sticky lg:top-0 lg:h-screen lg:w-[400px] lg:overflow-y-auto lg:p-16 lg:pr-0 lg:pb-24"
     >
       <img
         src={heroImage}

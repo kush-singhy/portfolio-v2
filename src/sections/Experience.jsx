@@ -10,7 +10,7 @@ export default function Experience() {
         <p className="relative z-10 text-3xl font-semibold">Experience</p>
         <span className="absolute bg-[#CBE7FF] w-[155px] h-[20px] bottom-0 -left-1 rotate-1" />
       </div>
-      <div className="space-y-10 relative before:absolute before:mt-7 before:ml-3 before:h-[calc(100%-28px)] before:w-[3px] before:bg-gradient-to-tl before:from-transparent before:bg-slate-300 before:to-transparent">
+      <div className=" before:hidden before:md:block space-y-10 relative before:absolute before:mt-7 before:ml-3 before:h-[calc(100%-28px)] before:w-[3px] before:bg-gradient-to-tl before:from-transparent before:bg-slate-300 before:to-transparent">
         <ExperienceCard
           date="Jul 2024 - Now"
           title="Westpac"

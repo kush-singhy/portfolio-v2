@@ -9,7 +9,7 @@ export default function ExperienceCard({
 }) {
   return (
     <div className="flex gap-3 w-full">
-      <div className="w-7 min-w-7 h-7 max-h-7 rounded-full border-[3px] border-gray-300 bg-white z-10 mt-7 mr-5"></div>
+      <div className="hidden md:block w-7 min-w-7 h-7 max-h-7 rounded-full border-[3px] border-gray-300 bg-white z-10 mt-7 mr-5"></div>
       <div className="group duration-200 flex-1">
         <p className="text-gray-500 mb-1">{date}</p>
         <div className="border-2 bg-[#F3F4F6] border-[#E7E8E9] rounded-xl p-5 duration-200 group-hover:bg-gray-200">
