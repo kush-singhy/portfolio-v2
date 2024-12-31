@@ -1,3 +1,6 @@
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
+
 import './App.css';
 import Details from './sections/Details';
 import Experience from './sections/Experience';
@@ -14,6 +17,8 @@ function App() {
         <Projects />
         <Runs />
       </div>
+      <Analytics />
+      <SpeedInsights />
     </div>
   );
 }
