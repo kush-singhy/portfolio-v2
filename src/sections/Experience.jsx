@@ -1,4 +1,5 @@
 import ExperienceCard from '../components/ExperienceCard';
+import Title from '../components/Title';
 import westpacIcon from '../assets/westpac.svg';
 import unswIcon from '../assets/unsw.svg';
 import amexIcon from '../assets/amex.svg';
@@ -6,10 +7,13 @@ import amexIcon from '../assets/amex.svg';
 export default function Experience() {
   return (
     <section id="experience" className="flex flex-col gap-6">
-      <div className="relative">
-        <p className="relative z-10 text-3xl font-semibold">Experience</p>
-        <span className="absolute bg-[#CBE7FF] w-[155px] h-[20px] bottom-0 -left-1 rotate-1" />
-      </div>
+      <Title
+        title="Experience"
+        highlightColour="bg-[#CBE7FF]"
+        rotation="rotate-1"
+        smWidth="w-[125px]"
+        mdWidth="md:w-[155px]"
+      />
       <div className=" before:hidden before:md:block space-y-10 relative before:absolute before:mt-7 before:ml-3 before:h-[calc(100%-28px)] before:w-[3px] before:bg-gradient-to-tl before:from-transparent before:bg-slate-300 before:to-transparent">
         <ExperienceCard
           date="Jul 2024 - Now"

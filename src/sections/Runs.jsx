@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getStravaActivities } from '../services/stravaApi';
 import RunCard from '../components/RunCard';
+import Title from '../components/Title';
 
 export default function Runs() {
   const [activities, setActivities] = useState([]);
@@ -60,12 +61,15 @@ export default function Runs() {
 
   return (
     <section id="runs" className="flex flex-col gap-4">
-      <div className="relative">
-        <div className="flex items-center gap-5">
-          <p className="relative z-10 text-3xl font-semibold">Runs</p>
-          <p className="text-gray-500 text-sm">(powered by Strava API)</p>
-        </div>
-        <span className="absolute bg-[#ABE2CB] w-[72px] h-[18px] bottom-0 -left-1 rotate-2" />
+      <div className="flex items-center gap-5">
+        <Title
+          title="Runs"
+          highlightColour="bg-[#ABE2CB]"
+          rotation="rotate-2"
+          smWidth="w-[60px]"
+          mdWidth="md:w-[72px]"
+        />
+        <p className="text-gray-500 text-sm">(powered by Strava API)</p>
       </div>
 
       <div>
