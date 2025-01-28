@@ -1,6 +1,6 @@
 import SocialIcon from '../components/SocialIcon';
 import TechIcon from '../components/TechIcon';
-import heroImage from '../assets/cartoon-headshot.jpg';
+import heroImage from '../assets/headshot.jpg';
 import { FiDownloadCloud } from 'react-icons/fi';
 import { FiMapPin } from 'react-icons/fi';
 import { FiGithub } from 'react-icons/fi';
