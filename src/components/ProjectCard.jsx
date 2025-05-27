@@ -14,7 +14,7 @@ export default function ProjectCard({
   return (
     <div className="relative h-[400px] flex flex-col gap-2 px-5 pt-5 border-2 bg-[#F3F4F6] border-[#E7E8E9] rounded-2xl group overflow-hidden duration-200 hover:bg-gray-200">
       <div className="flex flex-col gap-2 md:flex-row md:justify-between items-start">
-        <p className="text-xl md:text-2xl font-normal mt-[2px]">{name}</p>
+        <p className="text-xl md:text-xl font-normal mt-[2px]">{name}</p>
         <div className="flex items-end gap-2">
           {siteUrl && (
             <button

@@ -1,13 +1,12 @@
 import TechIcon from '../components/TechIcon';
-import heroImage from '../assets/headshot.webp';
+import heroImage from '../assets/cartoon-headshot.jpg';
 import SocialIcons from '../components/SocialIcons';
 import { FiDownloadCloud } from 'react-icons/fi';
 import { FiMapPin } from 'react-icons/fi';
 
 import jsIcon from '../assets/javascript.svg';
 import reactIcon from '../assets/react.svg';
-import nodeIcon from '../assets/nodejs.svg';
-import tailwindIcon from '../assets/tailwind.svg';
+import swiftIcon from '../assets/swift.svg';
 import postgresIcon from '../assets/postgres.svg';
 import figmaIcon from '../assets/figma.svg';
 import cvFile from '../assets/cv.pdf';
@@ -30,7 +29,7 @@ export default function Details() {
         />
 
         <div className="flex flex-col gap-2">
-          <h1 className="text-4xl font-bold text-gray-800 md:min-w-72 md:mb-2">
+          <h1 className="text-4xl font-semibold text-gray-800 md:min-w-72 md:mb-2">
             Kush Singhy
           </h1>
           <div className="flex md:gap-3 mb-3">
@@ -65,10 +64,9 @@ export default function Details() {
       <div id="tech-stack" className="mb-16">
         <p className="text-gray-800 mb-2">Current Tech</p>
         <div id="tech-icons" className="flex gap-2">
+          <TechIcon icon={swiftIcon} name="Swift" />
           <TechIcon icon={jsIcon} name="Javascript" />
           <TechIcon icon={reactIcon} name="React" />
-          <TechIcon icon={nodeIcon} name="NodeJS" />
-          <TechIcon icon={tailwindIcon} name="Tailwind" />
           <TechIcon icon={postgresIcon} name="Postgres" />
           <TechIcon icon={figmaIcon} name="Figma" />
         </div>

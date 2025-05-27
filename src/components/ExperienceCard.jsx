@@ -20,7 +20,7 @@ export default function ExperienceCard({
               className="duration-200 delay-100 group-hover:-rotate-12"
             />
             <div className="flex flex-col">
-              <p className="text-lg md:text-xl font-normal">{title}</p>
+              <p className="text-lg md:text-lg font-normal">{title}</p>
               <p className="text-base text-gray-500">{role}</p>
             </div>
           </div>

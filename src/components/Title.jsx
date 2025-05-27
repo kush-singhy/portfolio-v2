@@ -9,9 +9,7 @@ export default function Title({
 }) {
   return (
     <div className="relative">
-      <p className="relative z-10 text-2xl md:text-3xl font-semibold">
-        {title}
-      </p>
+      <p className="relative z-10 text-2xl md:text-3xl font-medium">{title}</p>
       <span
         className={`absolute ${highlightColour} ${smWidth} ${mdWidth} h-[20px] bottom-0 -left-1 ${rotation}`}
       />

@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
-import { FaMediumM } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
+import { BsSubstack } from 'react-icons/bs';
 import { FiGithub } from 'react-icons/fi';
 import { FiLinkedin } from 'react-icons/fi';
 import { FiYoutube } from 'react-icons/fi';
@@ -21,12 +20,8 @@ export default function SocialIcons() {
         url="https://www.youtube.com/@kushsinghy"
       />
       <SocialIcon
-        icon={<FaXTwitter className="w-5 h-5" />}
-        url="https://x.com/kushsinghy_"
-      />
-      <SocialIcon
-        icon={<FaMediumM className="w-5 h-5" />}
-        url="https://medium.com/@kushsinghy"
+        icon={<BsSubstack className="w-4 h-4" />}
+        url="https://kushsinghy.substack.com/"
       />
     </div>
   );
