@@ -1,17 +1,29 @@
 import {
   formatDistance,
   formatPace,
-  formatDateTime,
   formatDate,
+  formatDateTime,
   formatTime,
 } from '@/utils/formatUtils';
 
 export interface StravaActivity {
   id: number;
   name: string;
+  type: string;
   start_date: string;
   distance: number;
   moving_time: number;
+}
+
+export interface StravaBestEffort {
+  name: string;
+  distance: number;
+  moving_time: number;
+  elapsed_time: number;
+}
+
+export interface StravaActivityDetail extends StravaActivity {
+  best_efforts: StravaBestEffort[];
 }
 
 interface RunCardProps {
