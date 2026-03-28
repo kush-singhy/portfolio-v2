@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply max-w-[100vw] scroll-smooth;
+  }
+  body {
+    @apply max-w-[100vw];
+  }
+  #root {
+    @apply max-w-site mx-auto font-sans;
+  }
+  @media (max-width: 1024px) {
+    body,
+    html {
+      @apply overflow-x-hidden;
+    }
+  }
+}

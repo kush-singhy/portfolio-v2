@@ -1,13 +1,25 @@
-import PropTypes from 'prop-types';
 import {
   formatDistance,
   formatPace,
   formatDateTime,
   formatDate,
   formatTime,
-} from '../utils/formatUtils';
+} from '@/utils/formatUtils';
 
-export default function RunCard({ run, isLast }) {
+export interface StravaActivity {
+  id: number;
+  name: string;
+  start_date: string;
+  distance: number;
+  moving_time: number;
+}
+
+interface RunCardProps {
+  run: StravaActivity;
+  isLast?: boolean;
+}
+
+export default function RunCard({ run, isLast }: RunCardProps) {
   return (
     <>
       <div className="w-full flex flex-col md:flex-row justify-between px-5 py-4 hover:bg-gray-200 duration-200 gap-3">
@@ -15,7 +27,7 @@ export default function RunCard({ run, isLast }) {
           <p className="font-medium truncate max-w-40 md:max-w-64">
             {run.name}
           </p>
-          <p className=" ml-auto text-gray-500 md:ml-0">
+          <p className="ml-auto text-gray-500 md:ml-0">
             <span>{formatDate(run.start_date)}</span>
             <span className="hidden md:inline">
               {' '}
@@ -25,15 +37,15 @@ export default function RunCard({ run, isLast }) {
         </div>
         <div className="flex gap-9">
           <div>
-            <p className=" text-gray-500">Distance</p>
+            <p className="text-gray-500">Distance</p>
             <p>{formatDistance(run.distance)}</p>
           </div>
           <div>
-            <p className=" text-gray-500">Pace</p>
+            <p className="text-gray-500">Pace</p>
             <p>{formatPace(run.distance, run.moving_time)}</p>
           </div>
           <div>
-            <p className=" text-gray-500">Time</p>
+            <p className="text-gray-500">Time</p>
             <p>{formatTime(run.moving_time)}</p>
           </div>
         </div>
@@ -42,13 +54,3 @@ export default function RunCard({ run, isLast }) {
     </>
   );
 }
-
-RunCard.propTypes = {
-  run: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    start_date: PropTypes.string.isRequired,
-    distance: PropTypes.number.isRequired,
-    moving_time: PropTypes.number.isRequired,
-  }).isRequired,
-  isLast: PropTypes.bool,
-};
